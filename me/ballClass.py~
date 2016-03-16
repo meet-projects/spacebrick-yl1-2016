@@ -1,0 +1,36 @@
+import bordersClass
+from turtle import *
+import turtle
+class Ball(Turtle):
+	def __init__(self,dx,dy,x,radius,y,color="grey"):
+		Turtle.__init__(self)
+		turtle.register_shape("astroid.gif")
+		ast=turtle.clone()
+		ast.shape("astroid.gif")
+		ast.goto(0, -215)
+		ast.st()
+		self.penup()
+		self.dx=dx
+		self.dy=dy
+		self.radius=radius
+		self.goto(x,y)
+		self.color("grey",color)
+		self.shape("circle")
+		#self.hideturtle() 	
+	def get_radius(self):
+		return self.radius 
+	def get_dx(self):
+		return self.dx
+	def get_dy(self):
+		return self.dy
+	def set_dx(self,new_dx):
+		self.dx=new_dx
+	def set_dy(self,new_dy):
+		self.dy=new_dy
+	def move(self):
+		self.goto(self.xcor()+self.dx , self.ycor()+self.dy)
+		if (self.xcor() > bordersClass.CANVAS_WIDTH/2) or (self.xcor() < bordersClass.CANVAS_WIDTH/-2):
+			self.dx=-self.dx 
+			return self.dx
+		if (self.ycor() > bordersClass.CANVAS_HEIGHT/2) :
+			self.dy=-self.dy

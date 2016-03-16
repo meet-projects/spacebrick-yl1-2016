@@ -1,0 +1,7 @@
+from turtle import *
+import random
+import turtle
+
+canvas=getcanvas() # the canvas is the area that the turtle is moving (the white background)
+CANVAS_WIDTH = canvas.winfo_width() # here we get canvas(screen) width
+CANVAS_HEIGHT = canvas.winfo_height()
