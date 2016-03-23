@@ -1,6 +1,7 @@
 from pedalClass import Pedal
 from ballClass import Ball
 import bordersClass
+from brickClass import Brick
 from turtle import *
 import random
 import time
@@ -10,12 +11,24 @@ CANVAS_WIDTH = canvas.winfo_width()
 CANVAS_HEIGHT = canvas.winfo_height()
 
 bgpic('breakout.gif')
+register_shape("astroid.gif")
 TIME_STEP = 30
 SQUARE_SIZE=20
 tracer(0)
 
 ball1=Ball(0.2, 0.2,7, 100, 0)
 mypad=Pedal(0.5, 0, -230, 5, 1, "grey")
+brick1=Brick
+i=0
+while(i<20):
+	b=Brick(40*i,100,230,"red")
+	b=Brick(40*i,100,50,"pink")
+	b=Brick(-40*i,100,230,"red")
+	b=Brick(-40*i,100,50,"pink")
+	i+=1
+
+i=0
+
 
 '''def borders(cells):
 	global mypad
@@ -27,7 +40,7 @@ mypad=Pedal(0.5, 0, -230, 5, 1, "grey")
 
  	if (mypad.xcor() > width):
 		mypad.set_dx(-mypad.get_dx())
-	if (cell.ycor() > height):	
+	if (cell.ycor() > height):=	
 		cell.set_dy(-cell.get_dy())
  	if (mypad.xcor() < -width):
 		mypad.set_dx(-mypad.get_dx())

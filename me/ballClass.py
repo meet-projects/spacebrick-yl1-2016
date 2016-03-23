@@ -2,20 +2,18 @@ import bordersClass
 from turtle import *
 import turtle
 class Ball(Turtle):
-	def __init__(self,dx,dy,x,radius,y,color="blue"):
+	def __init__(self,dx,dy,x,radius,y,color="grey"):
 		Turtle.__init__(self)
-		'''turtle.register_shape("astroid.gif")
 		ast=turtle.clone()
 		ast.shape("astroid.gif")
-		ast.goto(0, -215)
-		ast.st()'''
+		ast.ht()
 		self.penup()
 		self.dx=dx
 		self.dy=dy
 		self.radius=radius
 		self.goto(x,y)
-		self.color("blue",color)
-		self.shape("circle")
+		self.color("grey",color)
+		self.shape("astroid.gif")
 		#self.hideturtle() 
 	def get_radius(self):
 		return self.radius 
